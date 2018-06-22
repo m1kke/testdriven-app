@@ -7,13 +7,14 @@ from flask_sqlalchemy import SQLAlchemy
 # init db
 db = SQLAlchemy()
 
+
 def create_app(script_info=None):
 
     # init app
     app = Flask(__name__)
 
     # set config
-    app_settings = os.getenv('APP_SETTIGNS')
+    app_settings = os.getenv('APP_SETTINGS')
     app.config.from_object(app_settings)
 
     # set up extensions
