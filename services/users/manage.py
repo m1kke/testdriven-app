@@ -44,8 +44,8 @@ def seed_db():
 @cli.command()
 def cov():
     """Run the unit tests with coverage."""
-    tests = unittest.TestLoader().discover("project/tests")
-    result = unittest.TextTestResult(verbosity=2).run(tests)
+    tests = unittest.TestLoader().discover("project/tests", pattern="test*.py")
+    result = unittest.TextTestRunner(verbosity=2, stream=None, descriptions="").run(tests)
     if result.wasSuccessful():
         COV.stop()
         COV.save()
