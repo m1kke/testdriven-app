@@ -1,1 +1,2 @@
-* text=auto
+# Convert line endings to LF always
+text eol=lf
